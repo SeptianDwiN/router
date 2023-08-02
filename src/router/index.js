@@ -5,7 +5,12 @@ import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import Contact from "@/views/Contact.vue";
 import Produk from "@/views/Produk.vue";
+import Kategori from "@/views/Kategori.vue";
 import Detail from "@/views/Detail.vue";
+import KategoriProduk from "@/views/KategoriProduk.vue";
+import NotFound from "../views/NotFound.vue";
+
+
 
 const routes = [ 
   {
@@ -29,11 +34,36 @@ const routes = [
     component: Produk,
   },
   {
+    path: "/kategori",
+    name: "Kategori",
+    component: Kategori,
+  },
+  {
     path: "/detail/:id_produk",
     name: "Detail",
     component: Detail,
     props:true,
   },
+  {
+    path: "/kategoriproduk",
+    name: "KategoriProduk",
+    component: KategoriProduk,
+  },
+  {
+    path: "/kategoriproduk",
+    name: "KategoriProduk",
+    component: KategoriProduk,
+    props: true
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFound,
+    props: true
+  },
+
+  
+ 
 ];
 
 const router = createRouter({

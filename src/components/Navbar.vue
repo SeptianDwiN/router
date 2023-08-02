@@ -4,6 +4,7 @@
         <li> <router-link :class="{active:rl_2}"  :to="{ name: 'About' }">About</router-link> </li>|
         <li> <router-link :class="{active:rl_3}"  :to="{ name: 'Contact' }">Contact</router-link></li>
         <li> <router-link :class="{active:rl_4}"  :to="{ name: 'Produk' }">Produk</router-link></li>
+        <li> <router-link :class="{active:rl_5}"  :to="{ name: 'Kategori' }">Kategori</router-link></li>
     </ul>
   </template>
 
@@ -20,6 +21,7 @@
             const rl_2 = ref(false)
             const rl_3 = ref(false)
             const rl_4 = ref(false)
+            const rl_5 = ref(false)
 
             if(props.idMenu == 1)
             {
@@ -27,6 +29,8 @@
                 rl_2.value = false;
                 rl_3.value = false;
                 rl_4.value = false;
+                rl_5.value = false;
+
             }
             else if(props.idMenu == 2)
             {
@@ -34,6 +38,7 @@
                 rl_2.value = true;
                 rl_3.value = false;
                 rl_4.value = false;
+                rl_5.value = false;
             }
             else if(props.idMenu == 3)
             {
@@ -41,6 +46,7 @@
                 rl_2.value = false;
                 rl_3.value = true;
                 rl_4.value = false;
+                rl_5.value = false;
             }
             else if(props.idMenu == 4)
             {
@@ -48,12 +54,22 @@
                 rl_2.value = false;
                 rl_3.value = false;
                 rl_4.value = true;
+                rl_5.value = false;
+            }
+            else if(props.idMenu == 5)
+            {
+                rl_1.value = false;
+                rl_2.value = false;
+                rl_3.value = false;
+                rl_4.value = false;
+                rl_5.value = true;
             }
             return{
                 rl_1,
                 rl_2,
                 rl_3,
-                rl_4
+                rl_4,
+                rl_5
             }
         }
     }
