@@ -31,6 +31,12 @@ export const kategori = {
             "nama" : "Alat Masak", 
             'img' : 'alatmasak.jpg'
         },
+        {
+            
+            "id" : 6,
+            "nama" : "Olahraga", 
+            'img' : 'alatmasak.jpg'
+        },
       
     ]
 } 

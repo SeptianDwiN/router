@@ -9,6 +9,8 @@ import Kategori from "@/views/Kategori.vue";
 import Detail from "@/views/Detail.vue";
 import KategoriProduk from "@/views/KategoriProduk.vue";
 import NotFound from "../views/NotFound.vue";
+import Login from "../views/Login.vue";
+
 
 
 
@@ -28,11 +30,7 @@ const routes = [
     name: "Contact",
     component: Contact,
   },
-  {
-    path: "/produk",
-    name: "Produk",
-    component: Produk,
-  },
+ 
   {
     path: "/kategori",
     name: "Kategori",
@@ -49,17 +47,37 @@ const routes = [
     name: "KategoriProduk",
     component: KategoriProduk,
   },
+  
   {
     path: "/kategoriproduk",
     name: "KategoriProduk",
     component: KategoriProduk,
-    props: true
+    props : true
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+    props : true
   },
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: NotFound,
     props: true
+  },
+  {
+    path: "/produk",
+    name: "Produk",
+    component: Produk,
+    beforeEnter : (to, from, next) => {
+      const loggedInUser = true;
+      if (loggedInUser) {
+        next();
+      } else {
+        next("/login")
+      }
+    }  
   },
 
   

@@ -1,5 +1,8 @@
 <template>
     <center>
+        <div v-if="state.length == 0">
+        <h2>Produk Tidak Ada</h2></div>
+        <div v-else> 
     <h1>Daftar Produk {{ NamaKategori }}</h1>
     <div :class="img" class="flex-container">
         <div v-for="produk in state" :key="produk.id" class="card">
@@ -8,6 +11,7 @@
             <h4>{{ produk.nama }}</h4>           
         </router-link>
         </div>
+    </div>
     </div>
 </center>
 </template>
@@ -33,7 +37,7 @@ export default {
         const NamaKategori = computed(() => {
             const foundKategori = kategori.kategori.find((kat) => kat.id == props.id_kategori)
                 return foundKategori ? foundKategori.nama : ""
-        })
+        });
         const getImgSrc = (imgFileName) => {
                 return '../src/assets/img/' + imgFileName + '';
             };

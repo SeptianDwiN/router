@@ -9,7 +9,7 @@
     <h4>Deskripsi :</h4>
     <h4>{{ detail.Deskripsi }}</h4>
     <h4>Harga : {{ detail.harga }}</h4>
-    </div>
+    </div>                                                                                                                                                                                                                                                                                                      .
 </center>
 </template>
 <script>
